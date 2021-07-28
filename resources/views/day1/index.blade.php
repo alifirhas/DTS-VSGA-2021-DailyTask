@@ -93,7 +93,8 @@
         </div>
     </div>
 
-    <x-slot name="script">
+    @section('script')
+        
         <script>
             function luasLingkaran(){
                 var jenis = document.getElementById('jenis').value;
@@ -141,6 +142,7 @@
             }
 
         </script>
-    </x-slot>
+
+    @endsection
 
 </x-app-layout>

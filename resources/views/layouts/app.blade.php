@@ -33,6 +33,6 @@
             </main>
         </div>
 
-        {{ $script }}
+        @yield('script')
     </body>
 </html>

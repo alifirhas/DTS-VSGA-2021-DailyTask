@@ -23,9 +23,8 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/day-one', function(){
-        return view('day1.index');
-    })->name('day.one');
+    Route::view('day1.index', 'day1.index')->name('day.one');
+    Route::view('day2.index', 'day2.index')->name('day.two');
 
 });
 
