@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <span class="text-3xl">Luas lingkaran</span>
+                    <span class="text-3xl text-black">Luas lingkaran</span>
 
                     <hr class="my-4">
 
@@ -32,9 +32,9 @@
                         </div>
                     </div>
 
-                    <x-button class="w-full text-center mb-4" type="button" onclick="luasLingkaran()">
+                    <x-button-green class="w-full text-center mb-4" type="button" onclick="luasLingkaran()">
                         {{ __('Hitung') }}
-                    </x-button>
+                    </x-button-green>
 
 
                     <div class="mb-4">
@@ -55,7 +55,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <span class="text-3xl">Besar kecil</span>
+                    <span class="text-3xl text-black">Besar kecil</span>
 
                     <hr class="my-4">
 
@@ -75,9 +75,9 @@
                         </div>
                     </div>
 
-                    <x-button class="w-full text-center mb-4" onclick="banding()">
+                    <x-button-green class="w-full text-center mb-4" onclick="banding()">
                         {{ __('Tentukan') }}
-                    </x-button>
+                    </x-button-green>
 
 
                     <div class="mb-4">

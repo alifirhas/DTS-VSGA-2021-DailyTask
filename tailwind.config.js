@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 module.exports = {
     purge: [
@@ -6,6 +7,8 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
+
+    darkMode: "class",
 
     theme: {
         extend: {
@@ -18,8 +21,10 @@ module.exports = {
     variants: {
         extend: {
             opacity: ['disabled'],
+            textOpacity: ['dark'],
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [require('@tailwindcss/forms'),require("nightwind")],
+
 };

@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <span class="text-3xl">Latihan membuat Form Fill-in</span>
+                    <span class="text-3xl text-black">Latihan membuat Form Fill-in</span>
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-8 lg:w-1/3">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <span class="text-3xl">Register</span>
+                    <span class="text-3xl text-black">Register</span>
         
                     <hr class="my-4">
         
@@ -59,7 +59,9 @@
                         <hr class="my-8">
         
                         <p>
-                            By creating this you agree to our 
+                            <span class="text-black">
+                                By creating this you agree to our 
+                            </span>
                             <a class="text-blue-400 underline" target="_blank"
                                 href="" onclick="window.open('https://www.youtube.com/watch?v=2xx_2XNxxfA', '_blank') ">Terms & Privacy</a>.
                         </p>
