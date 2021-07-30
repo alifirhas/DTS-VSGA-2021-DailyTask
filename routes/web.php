@@ -25,7 +25,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::view('day1.index', 'day1.index')->name('day.one');
     Route::view('day2.index', 'day2.index')->name('day.two');
-
+    Route::view('day3.index', 'day3.index')->name('day.three');
+    
 });
 
 
