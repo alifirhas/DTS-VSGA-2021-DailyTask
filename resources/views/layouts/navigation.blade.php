@@ -31,6 +31,11 @@
                         {{ __('Hari 3') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('day.four')" :active="request()->routeIs('day.four')">
+                        {{ __('Hari 4') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
