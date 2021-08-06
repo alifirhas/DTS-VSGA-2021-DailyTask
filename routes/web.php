@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DaySixController;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::middleware(['auth'])->group(function () {
-    
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -27,8 +29,14 @@ Route::middleware(['auth'])->group(function () {
     Route::view('day2.index', 'day2.index')->name('day.two');
     Route::view('day3.index', 'day3.index')->name('day.three');
     Route::view('day4.index', 'day4.index')->name('day.four');
-    
+
+    Route::prefix('day6/')->group(function () {
+
+        Route::get('', [DaySixController::class, 'index'])->name('day.six');
+        Route::post('/view', [DaySixController::class, 'view'])->name('day.six.view');
+
+    });
+
 });
 
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
