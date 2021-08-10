@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DaySixController;
+use App\Http\Controllers\DaySevenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,14 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/view', [DaySixController::class, 'view'])->name('day.six.view');
 
     });
+
+    Route::prefix('day7/')->group(function () {
+
+        Route::get('/order', [DaySevenController::class, 'index'])->name('day.seven');
+
+    });
+    
+
 
 });
 

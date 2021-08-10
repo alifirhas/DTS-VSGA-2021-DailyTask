@@ -89,7 +89,7 @@
                                 <label class="label" for="usia">
                                     <span class="label-text">usia</span>
                                 </label>
-                                <input name="usia" type="number" placeholder="usia" id="usia"
+                                <input oninput="this.value=this.value.slice(0,this.maxLength)" name="usia" type="number" placeholder="usia" id="usia"
                                     class="input input-bordered" value="{{ old('usia') }}" maxlength="2" required>
                                 @error('usia')
                                 <span class="text-xs text-red-600 dark:text-red-400 mt-2">
