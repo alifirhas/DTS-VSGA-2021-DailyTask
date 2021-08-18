@@ -22,7 +22,7 @@
                         <div class="relative">
                             <input type="number" placeholder="Celcius" required autofocus id="celcius"
                                 class="w-full pr-16 input input-primary input-bordered">
-                            <button class="absolute top-0 right-0 rounded-l-none btn btn-primary" id="go">GO</button>
+                            <button class="absolute top-0 right-0 rounded-l-none btn btn-primary">C</button>
                         </div>
                     </div>
 
@@ -71,17 +71,116 @@
 
     <script>
 
+        function celConvert(to, deg){
+            
+            if (to == 'far') {
+                return (deg * 9/5) + 32;
+            }
+
+            if (to == 're') {
+                return 4/5 * deg;
+            }
+
+            if (to == 'kel') {
+                return deg + 273.15;
+            }
+
+            return deg;
+            
+        }
+
+        function farConvert(to, deg){
+
+            if (to == 'cel') {
+                return (deg - 32)*5/9;
+
+            }
+
+            if (to == 're') {
+                return (4/9)*(deg - 32);
+            }
+
+            if (to == 'kel') {
+                return ((deg - 32)*5/9)+273.15;
+            }
+
+            return deg;
+        }
+
+        function reConvert(to, deg){
+
+            if (to == 'cel') {
+                return 5/4*deg;
+
+            }
+
+            if (to == 'far') {
+                return 9/4*deg+32
+            }
+
+            if (to == 'kel') {
+                return (5/4*deg)+273.15;
+            }
+
+            return deg;
+        }
+
+        function kelConvert(to, deg){
+
+            if (to == 'cel') {
+                return deg - 273.15;
+
+            }
+
+            if (to == 'far') {
+                return (deg - 273.15) * 9/5 + 32;
+            }
+
+            if (to == 're') {
+                return 4/5*(deg-273)
+            }
+
+            return deg;
+
+        }
+
         $('#celcius').keyup(function(){
             
-            var celcius = parseInt($('#celcius').val());
+            var celcius = parseFloat($('#celcius').val());
 
-            var celToFar = (celcius * 9/5) + 32;
-            var celToRe = 4/5 * celcius;
-            var celToKel = celcius + 273.15;
+            $('#farenheit').val(celConvert('far', celcius));
+            $('#reamur').val(celConvert('re', celcius));
+            $('#kelvin').val(celConvert('kel', celcius));
 
-            $('#farenheit').val(celToFar);
-            $('#reamur').val(celToRe);
-            $('#kelvin').val(celToKel);
+        })
+
+        $('#farenheit').keyup(function(){
+            
+            var farenheit = parseFloat($('#farenheit').val());
+
+            $('#celcius').val(farConvert('cel', farenheit));
+            $('#reamur').val(farConvert('re', farenheit));
+            $('#kelvin').val(farConvert('kel', farenheit));
+
+        })
+
+        $('#reamur').keyup(function(){
+            
+            var reamur = parseFloat($('#reamur').val());
+
+            $('#celcius').val(reConvert('cel', reamur));
+            $('#farenheit').val(reConvert('far', reamur));
+            $('#kelvin').val(reConvert('kel', reamur));
+
+        })
+
+        $('#kelvin').keyup(function(){
+            
+            var kelvin = parseFloat($('#kelvin').val());
+
+            $('#celcius').val(kelConvert('cel', kelvin));
+            $('#farenheit').val(kelConvert('far', kelvin));
+            $('#reamur').val(kelConvert('re', kelvin));
 
         })
 
