@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DaySixController;
 use App\Http\Controllers\DayTenController;
 use App\Http\Controllers\DaySevenController;
+use App\Http\Controllers\DayElevenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,15 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::get('day10/', [DayTenController::class, 'index'])->name('day.ten');
+
+    Route::prefix('day11/')->name('day.eleven.')->group(function () {
+        
+        Route::get('', [DayElevenController::class, 'index'])->name('index');
+        Route::post('', [DayElevenController::class, 'store']);
+        Route::delete('{printer}', [DayElevenController::class, 'destroy'])->name('delete');
+        Route::put('{printer}', [DayElevenController::class, 'update'])->name('update');
+
+    });
     
 
 
