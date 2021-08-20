@@ -25,7 +25,7 @@ class DayElevenController extends Controller
 
         $this->validate($request, [
             
-            'merek' => ['required','max:100','string','regex:/^[\pL\s\-]+$/u'],
+            'merek' => ['required','max:100','string'],
             'warna' => ['required','digits_between:1,3'],
             'jumlah' => ['required','digits_between:1,3'],
             
@@ -49,7 +49,7 @@ class DayElevenController extends Controller
 
         $this->validate($request, [
             
-            'merek' => ['required','max:100','string','regex:/^[\pL\s\-]+$/u'],
+            'merek' => ['required','max:100','string'],
             'warna' => ['required','digits_between:1,3'],
             'jumlah' => ['required','digits_between:1,3'],
             

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Printer;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PrinterFactory extends Factory
@@ -22,7 +23,7 @@ class PrinterFactory extends Factory
     public function definition()
     {
         return [
-            'merek' => $this->faker->name(),
+            'merek' => Str::remove(".", $this->faker->sentence(2)),
             'color_id' => 5,
             'jumlah' => 40,
         ];

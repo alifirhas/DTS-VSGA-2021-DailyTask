@@ -52,7 +52,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('day.eleven.index')" :active="request()->routeIs('day.ten')">
+                    <x-nav-link :href="route('day.eleven.index')" :active="request()->routeIs('day.eleven.index')">
                         {{ __('Hari 11') }}
                     </x-nav-link>
                 </div>

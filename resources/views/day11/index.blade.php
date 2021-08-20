@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Hari 1') }}
+            {{ __('Hari 11') }}
         </h2>
     </x-slot>
 
@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <span class="text-3xl text-black">Printer</span>
-                    <a href="#my-modal" class="btn btn-primary float-right">Tambah baru</a>
+                    <a href="#my-modal" class="btn btn-primary btn-sm float-right">Tambah baru</a>
 
 
                     <hr class="my-4">
@@ -60,7 +60,7 @@
                     @endif
 
                     <div class="overflow-x-auto">
-                        <table class="table w-full table-zebra">
+                        <table class="table w-full table-zebra table-compact">
                             <thead>
                                 <tr>
                                     <th>no.</th>
@@ -78,18 +78,23 @@
                                 @if ($printers->count())
                                 @foreach ($printers as $printer)
 
-                                <tr>
-                                    <th>{{ $i }}</th>
+                                <tr class="group">
+                                    <th class="group-hover:bg-gray-100">{{ $i }}</th>
                                     <form action="{{ route('day.eleven.update', $printer) }}" method="POST"
                                         id="updatePrinter{{ $printer->id }}">
                                         @method('PUT')
                                         @csrf
-                                        <td>
+                                        <td class="group-hover:bg-gray-100">
                                             <input type="text" required id="merek" name="merek" placeholder="Merek"
                                                 class="input focus:input-bordered border-0 bg-transparent"
                                                 list="listMerek" value="{{ $printer->merek }}">
+                                            @error('*')
+                                            <div class="text-red-500 mt-2 text-sm">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </td>
-                                        <td>
+                                        <td class="group-hover:bg-gray-100">
                                             <select required id="warna" name="warna"
                                                 class="select focus:select-bordered border-0 bg-transparent">
                                                 <option disabled="disabled" selected="selected">Pilih warna</option>
@@ -102,7 +107,7 @@
                                                 @endforeach
                                             </select>
                                         </td>
-                                        <td>
+                                        <td class="group-hover:bg-gray-100">
                                             <input type="number" required id="jumlah" name="jumlah" placeholder="Jumlah"
                                                 class="input focus:input-bordered border-0 bg-transparent"
                                                 value="{{ $printer->jumlah }}">
@@ -111,15 +116,15 @@
                                     {{-- <td>{{ $printer->merek }}</td> --}}
                                     {{-- <td>{{ $printer->color->warna }}</td>
                                     <td>{{ $printer->jumlah }}</td> --}}
-                                    <td>
+                                    <td class="group-hover:bg-gray-100">
                                         <form action="{{ route('day.eleven.delete', $printer) }}" method="POST"
                                             id="hapusPrinter{{ $printer->id }}">
                                             @method('DELETE')
                                             @csrf
                                         </form>
-                                        <div class="btn-group">
+                                        <div class="">
                                             <button form="updatePrinter{{ $printer->id }}"
-                                                class="btn btn-sm btn-accent">Update</button>
+                                                class="btn btn-sm btn-outline">Update</button>
                                             <button form="hapusPrinter{{ $printer->id }}"
                                                 class="btn btn-sm btn-secondary"
                                                 onclick="return confirm('yakin dihapus?')">Hapus</button>
@@ -139,7 +144,10 @@
 
                         </table>
 
-                        {{ $printers->links() }}
+                        <div class="my-4">
+                            
+                            {{ $printers->links() }}
+                        </div>
                     </div>
                 </div>
 
