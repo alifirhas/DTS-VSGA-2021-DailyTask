@@ -1,9 +1,3 @@
-<p align="center"><a href="https://github.com/alifirhas" target="_blank"><img src="https://avatars.githubusercontent.com/u/32509276?v=4" width="400"></a></p>
-
-
-
----
-
 ### Table of Contents
 You're sections headers will be used to reference location of destination.
 
